@@ -1,0 +1,33 @@
+First line:
+- Total number of activities (incl. any dummy activities)
+- number of resources
+
+
+Block, indicating for each activity:
+- activity number
+- number of modes (here always 1)
+- number of S->S successors
+- number of S->F successors
+- number of F->S successors
+- number of F->F successors
+- index of S->S successors
+- [min. time-lag] to each S->S successor
+- index of S->F successors
+- [min. time-lag] to each S->F successor
+- index of F->S successors
+- [min. time-lag] to each F->S successor
+- index of F->F successors
+- [min. time-lag] to each F->F successor
+
+Block, indicating for each activity:
+- number of activity
+- mode (here always 1)
+- index of the workload resource
+- work content
+- for each resource: minimum and maximum requirement
+
+Last line:
+- resource capacities
+- min. block length
+
+
