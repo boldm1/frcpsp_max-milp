@@ -10,7 +10,7 @@ class Project():
         self.tasks = tasks # tasks = {task_id : task_object}
         self.R_max = R_max # resource availabilities
         self.l_min = l_min # min. block length
-        self.T = 40 
+        self.T = sum(tasks[i].d_max for i in tasks) # project horizon 
         self.init_dgraph = self.dgraph_init() # initial dgraph. Useful for unscheduling step
         self.dgraph = self.dgraph_init()
         temporal_analysis(self)

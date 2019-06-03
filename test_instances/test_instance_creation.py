@@ -10,7 +10,8 @@ from shutil import copyfile
 def convert_instances(path_to_rcpspmax_folder):
     os.chdir(path_to_rcpspmax_folder)
     for full_filename in os.listdir(path_to_rcpspmax_folder):
-        if os.path.splitext(full_filename)[1] == '.SCH':
+        file_ext = os.path.splitext(full_filename)[1]
+        if file_ext == '.SCH' or file_ext == '.sch':
             filename = os.path.splitext(full_filename)[0]
             f = open(full_filename, 'r')
             raw_lines = f.read().splitlines()
@@ -90,5 +91,9 @@ def convert_instances(path_to_rcpspmax_folder):
                 f.write(new_raw_last_line)
             os.remove(full_filename) # delete rcpsp/max version of the file
 
-convert_instances('/home/boldm1/Documents/phd/frcpsp/frcpsp_max/test_instances/sm_j10')
+#convert_instances('/home/boldm1/Documents/phd/frcpsp/frcpsp_max/milp/test_instances/sm_j10')
+#convert_instances('/home/boldm1/Documents/phd/frcpsp/frcpsp_max/milp/test_instances/sm_j30')
+#convert_instances('/home/boldm1/Documents/phd/frcpsp/frcpsp_max/milp/test_instances/testset_ubo10')
+convert_instances('/home/boldm1/Documents/phd/frcpsp/frcpsp_max/milp/test_instances/testset_ubo20')
+#convert_instances('/home/boldm1/Documents/phd/frcpsp/frcpsp_max/milp/test_instances/testset_ubo100')
 
